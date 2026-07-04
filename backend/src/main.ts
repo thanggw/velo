@@ -8,10 +8,17 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api');
   app.use(cookieParser());
+
+  const allowedOrigins = [
+    'http://localhost:5173',
+    process.env.FRONTEND_URL, 
+  ].filter(Boolean) as string[];
+
   app.enableCors({
-    origin: 'http://localhost:5173',
+    origin: allowedOrigins,
     credentials: true,
   });
+
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
@@ -20,7 +27,8 @@ async function bootstrap() {
     }),
   );
 
-  await app.listen(3000);
+  const port = process.env.PORT || 3000;
+  await app.listen(port);
 }
 
 void bootstrap();
