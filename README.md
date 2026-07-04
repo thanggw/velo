@@ -190,25 +190,3 @@ npm run build
 cd frontend
 npm run build
 ```
-
-## Lệnh Git Gợi Ý
-
-Nếu thư mục hiện tại chưa phải Git repository:
-
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<your-repo>.git
-git push -u origin main
-```
-
-Nếu đã có repository:
-
-```bash
-git status
-git add .
-git commit -m "Prepare project for GitHub"
-git push
-```
