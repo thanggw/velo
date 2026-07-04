@@ -36,7 +36,7 @@
         <el-table-column label="Tasks" width="110" align="center">
           <template #default="{ row }">{{ row._count?.tasks ?? 0 }}</template>
         </el-table-column>
-        <el-table-column label="Actions" width="300" fixed="right">
+        <el-table-column label="Actions" width="400" fixed="right">
           <template #default="{ row }">
             <el-button :icon="Grid" @click="router.push(`/projects/${row.id}/kanban`)">Kanban</el-button>
             <el-button :icon="Edit" v-permission="['ADMIN', 'MANAGER']" @click="openEdit(row)">Edit</el-button>
